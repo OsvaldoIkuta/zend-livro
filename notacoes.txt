@@ -1,0 +1,158 @@
+﻿docker container run -d --name teste-php -v ${pwd}:/var/www/html -p 8080:80 teste-imagem
+
+docker exec -it “container-id” bash
+
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+
+composer create-project zendframework/zend-expressive-skeleton expressive
+
+
+
+passo 1:  php vendor/bin/expressive    ou      composer expressive
+
+
+passo 2: composer expressive module:create Announcements
+
+
+passo 3: composer expressive handler:create Announcements\\Handler\\AnnouncementsReadHandler
+
+
+
+
+composer require dasprid/container-interop-doctrine
+
+
+// criar o arquivo config/autoload/doctrine.local.php
+
+//definir o arquivo config/autoload/doctrine.local.php
+
+php vendor/bin/doctrine
+
+http://localhost:93/?cnpj=12675703000107&notaF=1082758
+
+
+
+//criar uma pasta Entity na src/Announcements/src
+//criar uma classe Announcement.php na pasta Entity
+//a classe Announcement vai conter todos os get set da tabela announcement
+
+//no arquivo src/Announcements/src/ConfigProvider.php, adicionar o codigo abaixo, no item do array do metodo __invoke
+'doctrine'     => $this->getDoctrineEntities(),
+
+
+//bash do container
+php vendor/bin/doctrine list
+
+php vendor/bin/doctrine orm:info
+
+
+
+//abra o arquivo AnnouncementsReadHandlerFactory.php no diretorio src/Handler
+// e modifique todos o codigo dentro do metodo __invoker
+
+$entityManeger = $container->get(EntityManager::class);
+return new AnnouncementsReadHandler($entityManeger);
+
+
+
+
+// Command Prompt
+"terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe"
+// PowerShell
+"terminal.integrated.shell.windows": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+// Git Bash
+"terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe"
+// Bash on Ubuntu (on Windows)
+"terminal.integrated.shell.windows": "C:\\Windows\\System32\\bash.exe"
+
+
+
+
+php -S 0.0.0.0:8080 -t public/ public/index.php
+
+
+ INSERT INTO announcements (id, sort, content, is_admin, is_active, created, updated) VALUES ('1acbahjcsadccsa', 12, 'text content', 1, 1);
+
+ INSERT INTO announcements (id, sort, content, is_admin, is_active, created, modified) VALUES ('1acbahjcsadccsa', 12, 'text content', 1, 1, '2019-03-27', '2019-03-27');
+
+ {"Request":{"Announcements":{"sort":15, "content": "content Chines", "is_admin": 0}}}
+
+
+
+
+
+
+
+
+
+
+ composer create-project zendframework/zend-expressive-skeleton livro-zend
+
+
+
+
+
+ composer	require	doctrine/orm
+
+
+
+
+/// criar	um	arquivo	de	configuração	chamado		cli-config.php	dentro	do	diretório		config
+
+<?php use	Doctrine\ORM\Tools\Console\ConsoleRunner; use	Doctrine\ORM\EntityManager;
+require	__DIR__	.	'/../vendor/autoload.php';
+/**	@var	\Interop\Container\ContainerInterface	$container	*/ $container	=	require	__DIR__	.	'/../config/container.php';
+/**	@var	\Doctrine\ORM\EntityManager	$em	*/ $em	=	$container->get(EntityManager::class);
+return	ConsoleRunner::createHelperSet($em);
+
+
+// O	próximo	passo	é	criarmos	o	arquivo	chamado	doctrine.local.php		dentro	do	diretório		config/autoload
+
+<?php
+return	[				
+    'doctrine'	=>	[								
+        'connection'	=>	[												
+            'orm'	=>	[																
+                'auto_generate_proxy_classes'	=>	true,																
+                'proxy_dir'		                =>	'data/cache/Prox y',																
+                'proxy_namespace'				=>	'Proxy',																
+                'underscore_naming_strategy'	=>	true,												
+                ],												
+                'orm_default'	=>	[																
+                    'driverClass'	=>	Doctrine\DBAL\Driver\PDOMySql\Driver::class,																
+                    'host'	=>	'localhost',																
+                    'port'	=>	3306,																
+                    'user'	=>	'root',																
+                    'password'	=>	'root',																
+                    'dbname'	=>	'livro_zend_expressive_db',																
+                    'driverOptions'	=>	[																				
+                        \PDO::MYSQL_ATTR_INIT_COMMAND	=>	"SET	NAMES	' UTF8'"																
+                    ]												
+                ],								
+            ],				
+    ]
+];
+
+
+
+http://livro-zendexpressive.dev/api/test-doctrine-connection
+
+
+
+php	vendor/bin/doctrine	orm:convert-mapping	--from-database	annotation	src/App/src/Entity/
+
+
+composer require zendframework/zend-hydrator
+
+
+
+composer require zendframework/zend-filter
+
+composer require zendframework/zend-json
+
+
+docker exec -it 829f3731eeeb composer serve
+
+
